@@ -12,16 +12,16 @@ export const Profile = ({ userData }) => {
         <p className="location">{location}</p>
       </div>
 
-      <ul className="stats">
-        <li>
+      <ul className={style.stats}>
+        <li className={style.statsItem}>
           <span className="label">Followers</span>
           <span className="quantity">{stats.followers}</span>
         </li>
-        <li>
+        <li className={style.statsItem}>
           <span className="label">Views</span>
           <span className="quantity">{stats.views}</span>
         </li>
-        <li>
+        <li className={style.statsItem}>
           <span className="label">Likes</span>
           <span className="quantity">{stats.likes}</span>
         </li>
