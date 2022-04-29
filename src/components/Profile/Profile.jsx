@@ -33,6 +33,6 @@ Profile.propTypes = {
   username: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
-  stats: PropTypes.object,
+  stats: PropTypes.objectOf(PropTypes.number),
   avatar: PropTypes.string,
 };
