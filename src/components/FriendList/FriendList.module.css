@@ -5,3 +5,26 @@
   padding: 5px;
   width: 50px;
 }
+
+.item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.name {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.statusOfline {
+  display: block;
+  background-color: red;
+  width: 50px;
+  height: 10px;
+}
+
+.statusOnline {
+  display: block;
+  background-color: green;
+  width: 50px;
+  height: 10px;
+}
