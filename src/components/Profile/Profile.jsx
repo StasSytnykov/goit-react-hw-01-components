@@ -7,33 +7,31 @@ export const Profile = ({
   location,
   avatar,
   stats: { followers, views, likes },
-}) => {
-  return (
-    <div className={style.profile}>
-      <div className={style.description}>
-        <img src={avatar} alt="User avatar" className={style.avatar} />
-        <p>{username}</p>
-        <p>{tag}</p>
-        <p>{location}</p>
-      </div>
-
-      <ul className={style.stats}>
-        <li className={style.statsItem}>
-          <span>Followers</span>
-          <span>{followers}</span>
-        </li>
-        <li className={style.statsItem}>
-          <span>Views</span>
-          <span>{views}</span>
-        </li>
-        <li className={style.statsItem}>
-          <span>Likes</span>
-          <span>{likes}</span>
-        </li>
-      </ul>
+}) => (
+  <div className={style.profile}>
+    <div className={style.description}>
+      <img src={avatar} alt="User avatar" className={style.avatar} />
+      <p>{username}</p>
+      <p>{tag}</p>
+      <p>{location}</p>
     </div>
-  );
-};
+
+    <ul className={style.stats}>
+      <li className={style.statsItem}>
+        <span>Followers</span>
+        <span>{followers}</span>
+      </li>
+      <li className={style.statsItem}>
+        <span>Views</span>
+        <span>{views}</span>
+      </li>
+      <li className={style.statsItem}>
+        <span>Likes</span>
+        <span>{likes}</span>
+      </li>
+    </ul>
+  </div>
+);
 
 Profile.propTypes = {
   username: PropTypes.string,
