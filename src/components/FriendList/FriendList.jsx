@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { FriendListItem } from './FriendListItem';
 import style from './FriendList.module.css';
 
 export const FriendList = ({ friends }) => {
@@ -6,15 +7,12 @@ export const FriendList = ({ friends }) => {
     <ul className={style.friendList}>
       {friends.map(({ avatar, name, isOnline, id }) => {
         return (
-          <li className={style.item} key={id}>
-            <img src={avatar} alt="User avatar" width="48" />
-            <p className={style.name}>{name}</p>
-            {isOnline ? (
-              <span className={style.statusOnline}></span>
-            ) : (
-              <span className={style.statusOfline}></span>
-            )}
-          </li>
+          <FriendListItem
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+            key={id}
+          />
         );
       })}
     </ul>
@@ -22,5 +20,12 @@ export const FriendList = ({ friends }) => {
 };
 
 FriendList.propTypes = {
-  friends: PropTypes.arrayOf(PropTypes.object),
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+      isOnline: PropTypes.bool,
+      id: PropTypes.number,
+    })
+  ),
 };
